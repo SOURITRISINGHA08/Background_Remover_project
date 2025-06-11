@@ -8,11 +8,11 @@ const downloadBtn = document.getElementById("downloadBtn");
 let uploadedFile = null;
 let downloadURL = null;
 
-// ⛔ Prevent browser from opening file when dropped anywhere on the page
+
 window.addEventListener("dragover", (e) => e.preventDefault());
 window.addEventListener("drop", (e) => e.preventDefault());
 
-// Prevent default behavior and highlight upload area
+
 uploadArea.addEventListener("dragover", (event) => {
   event.preventDefault();
   uploadArea.style.backgroundColor = "#fdf1d6";
@@ -22,7 +22,7 @@ uploadArea.addEventListener("dragleave", () => {
   uploadArea.style.backgroundColor = "antiquewhite";
 });
 
-// Handle drop inside the upload area
+
 uploadArea.addEventListener("drop", (event) => {
   event.preventDefault();
   const file = event.dataTransfer.files[0];
@@ -30,12 +30,12 @@ uploadArea.addEventListener("drop", (event) => {
   uploadArea.style.backgroundColor = "antiquewhite";
 });
 
-// Click-to-upload
+
 uploadArea.addEventListener("click", () => {
   imageInput.click();
 });
 
-// File input change
+
 imageInput.addEventListener("change", (event) => {
   const file = event.target.files[0];
   handleFile(file);
@@ -57,7 +57,7 @@ function handleFile(file) {
   }
 }
 
-// Remove background using API
+
 removeBgBtn.addEventListener("click", async () => {
   if (!uploadedFile) {
     alert("Please upload an image first.");
@@ -75,7 +75,7 @@ removeBgBtn.addEventListener("click", async () => {
     const response = await fetch("https://api.remove.bg/v1.0/removebg", {
       method: "POST",
       headers: {
-        "X-Api-Key": "6DWCC64YdQSMv6ZL1N95hSUz" // 🔴 Replace with your own key
+        "X-Api-Key": "6DWCC64YdQSMv6ZL1N95hSUz" 
       },
       body: formData,
     });
@@ -97,7 +97,7 @@ removeBgBtn.addEventListener("click", async () => {
   }
 });
 
-// Download background-removed image
+
 downloadBtn.addEventListener("click", () => {
   if (downloadURL) {
     const a = document.createElement("a");
@@ -107,7 +107,7 @@ downloadBtn.addEventListener("click", () => {
   }
 });
 
-// Reset UI
+
 resetBtn.addEventListener("click", () => {
   imageInput.value = "";
   uploadedFile = null;
