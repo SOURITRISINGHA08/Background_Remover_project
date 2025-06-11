@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Background Remover</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Background Remover</h1>
+    <div class="upload-area" id="upload-area">
+      <p>Drag & Drop or click to upload Image</p>
+      <input type="file" id="imageInput" accept="image/*" hidden />
+    </div>
+    <div class="btns">
+      <button class="btn" id="removebackgroundBtn">Remove Background</button>
+      <button class="btn" id="resetBtn">Reset</button>
+      <button id="downloadBtn" style="display:none;">Download Image</button>
+
+    </div>
+    <div class="result" id="result">
+      <p>No Images Processed yet</p>
+    </div>
+  </div>
+  
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
